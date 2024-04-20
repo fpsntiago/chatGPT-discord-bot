@@ -128,26 +128,21 @@ def run_discord_bot():
     async def help(interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=False)
         await interaction.followup.send(""":star: **BASIC COMMANDS** \n
-        - `/chat [message]` Chat with ChatGPT(gpt-4)
+        - `/chat [message]` Chat with Lydia
         - `/draw [prompt][model]` Generate an image with model you specific
-        - `/switchpersona [persona]` Switch between optional ChatGPT jailbreaks
+        - `/switchpersona [persona]` Switch between ChatGPT jailbreaks 
                 `dan`: DAN 13.5 (Latest Working ChatGPT Jailbreak prompt)
                 `Smart mode`: AIM (Always Intelligent and Machiavellian)
                 `Developer Mode`: software developer who specializes in the AI's area
-        - `/private` ChatGPT switch to private mode
-        - `/public` ChatGPT switch to public mode
+        - `/private` Enable private mode
+        - `/public` Enable public mode
         - `/replyall` ChatGPT switch between replyAll mode and default mode
         - `/reset` Clear conversation history
         - `/chat-model` Switch different chat model
                 `gpt-4`: GPT-4 model
-                `Gemini`: Google gemeni-pro model
-
-For complete documentation, please visit:
-https://github.com/Zero6992/chatGPT-discord-bot""")
-
+                `Gemini`: Google gemeni-pro model""")
         logger.info(
             "\x1b[31mSomeone needs help!\x1b[0m")
-
 
     @discordClient.tree.command(name="draw", description="Generate an image with the Dall-e-3 model")
     @app_commands.choices(model=[
